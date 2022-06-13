@@ -1,5 +1,5 @@
 # quasar2-input-issue
-To demo a quasar2 Q-input issue with Japanese IME on Anroid system.
+To demo a quasar2 Q-input issue with Japanese IME on Android system.
 
 This issue happens only if **ALL** the following conditions are true.
 1. **Q-input** inside **Q-page** element, which is enclosed by **Q-page-container** then **Q-layout**. 
