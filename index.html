@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Q-Input Issue with IME+Validation - QuasarV2.7.1</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons"  type="text/css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/quasar@2.7.1/dist/quasar.min.css"/>
+  </head>
+
+  <body style="padding:15px">
+    <div id="q-app">
+        <q-layout>
+            <q-page-container>
+              <q-page>
+                <q-input v-model="text1" label="w/o Validation">
+                </q-input>  
+
+                <q-input v-model="text2" label="w/ Validation" :rules="[
+                    val => val && val.length >=10  || 'Too Short',
+                ]">
+                </q-input>    
+              </q-page>
+            </q-page-container>
+        </q-layout>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.prod.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/quasar@2.7.1/dist/quasar.umd.prod.js"></script>
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    text1 : "",
+                    text2 : "",
+                }
+            }
+        })
+
+        app.use(Quasar, { config: {} })
+        app.mount('#q-app')
+    </script>
+  </body>
+</html>
